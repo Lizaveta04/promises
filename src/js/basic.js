@@ -4,8 +4,9 @@ import GameSaving from './gamesaving';
 
 export default class GameSavingLoader {
   static load() {
-    const data = read(); // возвращается Promise!
-    const value = json(data); // возвращается Promise!
-    return data.then((res) => value).then((res) => new GameSaving(value)); // .catch((err) => new Error('Ошибка!Не удалось распарсить строку!'));
+    return read()
+      .then((data) => json(data))
+      .then((data) => new GameSaving(JSON.parse(data)))
+      .catch((err) => new Error('Ошибка!Не удалось распарсить строку!'));
   }
 }
