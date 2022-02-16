@@ -54,7 +54,7 @@ export default class GameSavingLoader {
 ```
 Вам нужно переписать метод `load` так, чтобы он возвращал `Promise` с данными (см. формат ниже).
 
-Спецификации объекта типа `GameSaving`:
+Спецификация объекта типа `GameSaving`:
 ```javascript
 {
   "id": <number>, // id сохранения
